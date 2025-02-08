@@ -45,6 +45,30 @@ var (
 			ProfileURL: "https://instagram.com/yourbusiness",
 			Engagement: 8.2,
 		},
+		{
+			ID:         "ig_2",
+			Platform:   "instagram",
+			Caption:    "i love neovim!!!",
+			ImageURL:   "https://blog.vtutor.com/wp-content/uploads/2019/11/Vim-logo.jpg",
+			Likes:      21,
+			Comments:   12,
+			Shares:     2,
+			PostedAt:   time.Now().Add(-24 * time.Hour),
+			ProfileURL: "https://instagram.com/yourbusiness",
+			Engagement: 2.1,
+		},
+		{
+			ID:         "ig_3",
+			Platform:   "instagram",
+			Caption:    "felt cute might delete later",
+			ImageURL:   "https://live.staticflickr.com/2859/10547948416_bbc900d1e0_z.jpg",
+			Likes:      1054,
+			Comments:   62,
+			Shares:     102,
+			PostedAt:   time.Now().Add(-24 * time.Hour),
+			ProfileURL: "https://instagram.com/yourbusiness",
+			Engagement: 2.1,
+		},
 	}
 
 	instagramAnalytics = []AnalyticsMetric{

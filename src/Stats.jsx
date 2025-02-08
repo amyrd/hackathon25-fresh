@@ -10,7 +10,8 @@ function Stats() {
   }, []);
 
   return (
-    <div>
+    <>
+    <div id="instagram-analytics">
       <h2>Instagram Analytics</h2>
       {analytics.length > 0 ? (
         analytics.map((item, index) => (
@@ -43,6 +44,9 @@ function Stats() {
         <p>No analytics data available.</p>
       )}
     </div>
+    <div id="twitter-analytics"></div>
+      <h2>Twitter Analytics</h2>
+    </>
   );
 }
 
