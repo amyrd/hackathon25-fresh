@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -17,6 +18,7 @@ const (
 func main() {
 	router := gin.Default()
 
+	router.Use(cors.Default())
 	// Login endpoint
 	router.POST("/login", func(c *gin.Context) {
 		var credentials struct {
