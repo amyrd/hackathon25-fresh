@@ -28,9 +28,11 @@ function Posts() {
               alt="Instagram post"
               style={{ width: "100%" }}
             />
-            <p>
-              Likes: {post.likes} Comments: {post.comments} Shares: {post.shares}
-            </p>
+            <div className="icon-bar">
+              <a>💝 {post.likes}</a>
+              <a>💬 {post.comments}</a>
+              <a>📲 {post.shares}</a>
+            </div>
             <p>{post.caption}</p>
           </div>
         ))}

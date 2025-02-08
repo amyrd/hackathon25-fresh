@@ -1,6 +1,12 @@
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   color: black;
+  background: linear-gradient(
+    to bottom,
+    rgba(85, 236, 247, 255),
+    rgb(0, 0, 167)
+  );
+  min-height: 100vh;
 }
 
 #logo {
@@ -32,6 +38,8 @@
   border: black 1px solid;
   border-radius: 15px;
   min-height: 100px;
+  background: white;
+  position: relative;
 }
 
 .section-header {
@@ -52,9 +60,10 @@
   float: left;
   border: solid black 2px;
   width: 100%;
-  height: 500px;
+  height: 600px;
   border-radius: 15px;
   overflow: scroll;
+  background: white;
 }
 
 .post-button {
@@ -64,12 +73,21 @@
   border-radius: 15px;
 }
 
+.icon-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  align-content: center;
+}
+
 .stats {
   float: left;
   border: solid black 2px;
   width: calc(50% - 16px);
   min-height: 500px;
   border-radius: 15px;
+  background: white;
 }
 
 .navbar {
@@ -82,4 +100,46 @@
   width: 100%;
   border-radius: 15px;
   background: linear-gradient(to right, red, yellow);
+}
+
+.news-ticker {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ticker-bar {
+  width: 100%;
+  border: black 1px solid;
+  border-radius: 15px;
+  min-height: 100px;
+  background-color: #333;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticker-content {
+  display: flex;
+  white-space: nowrap;
+  animation: tickerMove 20s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@keyframes tickerMove {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-175%);
+  }
 }
