@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./index.css";
 import Login from "./Login";
-import Posts from "./Posts";
+import Posts from "./Insta.jsx";
 import Dashboard from "./Dashboard.jsx";
 
 function App() {

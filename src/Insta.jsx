@@ -16,7 +16,7 @@ function Posts() {
       <div>
         {instagramPosts.map((post) => (
           <div key={post.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
-            <img src={post.image} alt="Instagram post" style={{ width: '100%' }} />
+            <img src={post.image_url} alt="Instagram post" style={{ width: '100%' }} />
             <p>{post.caption}</p>
           </div>
         ))}

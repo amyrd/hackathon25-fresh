@@ -1,46 +1,38 @@
 import { Menubar } from "primereact/menubar";
-import ReactImg from "./assets/react.svg";
+import SparkLogo from "./assets/sparkhacks-logo.svg"
 import { useEffect, useState } from "react";
-import Posts from "./Posts.jsx";
+import Insta from "./Insta.jsx";
+import Twitter from "./Twitter.jsx";
+import Stats from "./Stats.jsx";
 
 function Dashboard() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:8080/twitter/posts") // Fetch data from Go backend
-      .then((response) => response.json())
-      .then((data) => setPosts(data))
-      .catch((error) => console.error("Error fetching posts:", error));
-  }, []);
-
   return (
     <>
       <div className="navbar">
-        <img src={ReactImg} style={{ width: "40px", height: "40px" }} />
-        <h1> MyBusinessBoard : Social Media Manager</h1>
+        <img
+          id="logo"
+          src={SparkLogo}
+        />
+        <h1>MyBusinessBoard : Social Media Manager</h1>
       </div>
       <div className="body-container">
         <div className="column-container">
           <div className="post-container">
             <div className="posts">
               {" "}
-              <Posts posts={posts} />
+              <Insta />
             </div>
             <button className="post-button"></button>
           </div>
           <div className="post-container">
             <div className="posts">
-              <h3>Twitter Posts</h3>
-              {posts.map((post) => (
-                <p key={post.id}>
-                  {post.id} {post.comments} {post.caption} {post.likes}
-                </p>
-              ))}
+              {" "}
+              <Twitter />
             </div>
             <button className="post-button"></button>
           </div>
           <div className="stats">
-            <h3>Stats</h3>
+            <Stats />
           </div>
         </div>
         <div className="row-container">Footer element</div>
