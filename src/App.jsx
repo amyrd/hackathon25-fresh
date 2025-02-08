@@ -24,6 +24,11 @@ function App() {
         {loggedIn ? (
           <div>
             <h1>Dashboard</h1>
+<<<<<<< HEAD
+=======
+            {/*render stuff here */}
+            <Posts />
+>>>>>>> f0af1b5b1339872f2369213d1ecd96d59a5ab538
           </div>
         ) : (
           <Login onLoginSuccess={handleLoginSuccess} />
