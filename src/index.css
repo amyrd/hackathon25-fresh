@@ -96,9 +96,10 @@
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  height: 50px;
+  height: 75px;
   width: 100%;
   border-radius: 15px;
+  border: solid black 1px;
   background: linear-gradient(to right, red, yellow);
 }
 
@@ -114,7 +115,7 @@
   border: black 1px solid;
   border-radius: 15px;
   min-height: 100px;
-  background-color: #333;
+  background: linear-gradient(to right, orange, red);
   color: white;
   overflow: hidden;
   position: relative;
