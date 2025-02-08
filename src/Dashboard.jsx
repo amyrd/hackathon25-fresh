@@ -61,16 +61,33 @@ function Dashboard() {
               draggable={false}
               className="createPost"
               modal={true}
-              style={{ width: "50vw" }}
+              style={{ width: "30vw", height: "30vw" }}
               onHide={() => setInstaVisible(false)}
             >
               <form>
-                Enter a caption: <input></input>
+                Enter a caption:
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {" "}
+                  <textarea className="input-box"></textarea>
+                </div>
+                Upload media:
                 <div className="card flex justify-content-center">
-            <Toast ref={toast}></Toast>
-            <FileUpload mode="basic" name="demo[]" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse Files" />
-        </div>  
-        <Button type="Submit">Submit</Button>
+                  <Toast ref={toast}></Toast>
+                  <FileUpload
+                    mode="basic"
+                    name="demo[]"
+                    url="/api/upload"
+                    accept="image/*"
+                    maxFileSize={1000000}
+                    onUpload={onUpload}
+                    auto
+                    chooseLabel="Browse Files"
+                    className="browse-files"
+                  />
+                </div>
+                <Button className="submit-button" type="Submit">
+                  Submit
+                </Button>
               </form>
             </Dialog>
           </div>
@@ -93,11 +110,16 @@ function Dashboard() {
               draggable={false}
               className="createPost"
               modal={true}
-              style={{ width: "50vw" }}
+              style={{ width: "30vw", height: "30vw" }}
               onHide={() => setTwitterVisible(false)}
             >
               <form>
-                <p>Twitter post form goes here</p>
+                Enter a caption:
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {" "}
+                  <textarea className="input-box"></textarea>
+                </div>
+                Upload media:
                 <div className="card flex justify-content-center">
                   <Toast ref={toast}></Toast>
                   <FileUpload
@@ -108,9 +130,13 @@ function Dashboard() {
                     maxFileSize={1000000}
                     onUpload={onUpload}
                     auto
-                    chooseLabel="Browse"
+                    chooseLabel="Browse Files"
+                    className="browse-files"
                   />
                 </div>
+                <Button className="submit-button" type="Submit">
+                  Submit
+                </Button>
               </form>
             </Dialog>
           </div>

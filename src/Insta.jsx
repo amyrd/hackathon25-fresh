@@ -13,7 +13,7 @@ function Posts() {
   return (
     <div>
       <div>
-        <h2>Instagram Posts</h2>
+        <h2 className="section-header">Instagram Posts</h2>
         {instagramPosts.map((post) => (
           <div
             key={post.id}

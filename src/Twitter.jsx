@@ -13,18 +13,29 @@ function Twitter() {
 
   return (
     <div>
-      <h2>Twitter Posts</h2>
+      <h2 className="section-header">Twitter Posts</h2>
       {posts.map((post) => (
-        <p key={post.id}>
-          {post.id} {post.comments} {post.caption} {post.likes}{" "}
+        <div
+          key={post.id}
+          style={{
+            border: "1px solid #ccc",
+            margin: "10px",
+            padding: "10px",
+          }}
+        >
+          {" "}
+          <p>{post.caption}</p>
           <img
             src={post.image_url}
-            style={{
-              width: "100px",
-              height: "auto",
-            }}
+            alt="Instagram post"
+            style={{ width: "100%" }}
           />
-        </p>
+          <div className="icon-bar">
+            <a>💬 {post.comments}</a>
+            <a>👍 {post.likes}</a>
+            <a>🔁 {post.shares}</a>
+          </div>
+        </div>
       ))}
     </div>
   );
