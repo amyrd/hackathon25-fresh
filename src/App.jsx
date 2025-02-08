@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <div className="body-container">
+      <div>
         {/* <div>
         {loggedIn ? (
           <div>
@@ -40,8 +40,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-        <Header />
-        <Body />
+        <div className="body-container">
+          <Header />
+          <Body />
+        </div>
       </div>
     </>
   );
