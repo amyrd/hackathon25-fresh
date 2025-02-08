@@ -26,7 +26,7 @@ function Dashboard() {
               {" "}
               <Posts posts={posts} />
             </div>
-            <div className="post-button"></div>
+            <button className="post-button"></button>
           </div>
           <div className="post-container">
             <div className="posts">
@@ -37,7 +37,7 @@ function Dashboard() {
                 </p>
               ))}
             </div>
-            <div className="post-button"></div>
+            <button className="post-button"></button>
           </div>
           <div className="stats">
             <h3>Stats</h3>
