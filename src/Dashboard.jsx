@@ -4,19 +4,32 @@ import { useEffect, useState } from "react";
 import Insta from "./Insta.jsx";
 import Twitter from "./Twitter.jsx";
 import Stats from "./Stats.jsx";
+import { Button } from 'primereact/button';
+import { Dialog } from 'primereact/dialog';
+        
 
 function Dashboard() {
+
+  const postInsta = () => {
+  
+  };
+
+  const postTweet = () => {
+
+  };
+  
   const travelDestinations = [
-    "#1 Japan",
-    "#2 Italy",
-    "#3 New Zealand",
-    "#4 Canada",
-    "#5 Switzerland",
-    "#6 Greece",
-    "#7 Australia",
-    "#8 Thailand",
-    "#9 France",
-    "#10 Iceland",
+    "TRENDING TAGS:",
+    "#business",
+    "#digitalmarketing",
+    "#entrepreneur",
+    "#onlinebusiness",
+    "#marketing",
+    "#store",
+    "#ecommerce",
+    "#smallbusiness",
+    "#shopping",
+    "#sales",
   ];
   return (
     <>
@@ -31,14 +44,14 @@ function Dashboard() {
               {" "}
               <Insta />
             </div>
-            <button className="post-button"></button>
+            <Button className="post-button" type="button">Create Instagram Post ⊕</Button>
           </div>
           <div className="post-container">
             <div className="posts">
               {" "}
               <Twitter />
             </div>
-            <button className="post-button"></button>
+            <Button className="post-button" type="button">Create Twitter Post ⊕</Button>
           </div>
           <div className="stats">
             <Stats />
@@ -49,7 +62,7 @@ function Dashboard() {
             <div className="ticker-content">
               {travelDestinations.map((country, index) => (
                 <span key={index} className="ticker-item">
-                  {country} &nbsp; | &nbsp;
+                  {country} &nbsp;&nbsp;
                 </span>
               ))}
             </div>
