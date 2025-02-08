@@ -31,6 +31,7 @@ function App() {
           <div>
             <h1>Dashboard</h1>
             {/*render stuff here */}
+            <Posts />
           </div>
         ) : (
           <Login onLoginSuccess={handleLoginSuccess} />
