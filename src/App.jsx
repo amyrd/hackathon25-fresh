@@ -2,9 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Login from './Login';
 
 function App() {
   const [count, setCount] = useState(0)
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [token, setToken] = useState(null);
+
+  const handleLoginSuccess = (token) => {
+    setLoggedIn(true);
+    setToken(token);
+  };
 
   return (
     <>
@@ -17,6 +25,16 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <div>
+        {loggedIn ? (
+          <div>
+            <h1>Dashboard</h1>
+            {/*render stuff here */}
+          </div>
+        ) : (
+          <Login onLoginSuccess={handleLoginSuccess} />
+        )}
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
