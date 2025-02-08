@@ -142,4 +142,77 @@ Let’s build something awesome! 🚀
 
 ---
 
-Would you like me to add any details about **database setup**, **API routes**, or **project structure**?
+
+# fetching data from the backend
+All Posts (Instagram + Twitter) → http://localhost:8080/posts
+Only Instagram Posts → http://localhost:8080/instagram/posts
+Only Twitter Posts → http://localhost:8080/twitter/posts
+
+**the response will be like**
+for now its hard coded to give you,
+```json
+[
+  {
+    "id": "ig_1",
+    "platform": "instagram",
+    "caption": "Sunset vibes ??",
+    "image_url": "https://example.com/ig1.jpg",
+    "likes": 1500,
+    "comments": 45,
+    "shares": 23,
+    "posted_at": "2025-02-07T12:00:00Z",
+    "profile_url": "https://instagram.com/yourbusiness",
+    "engagement": 8.2
+  },
+  {
+    "id": "tw_1",
+    "platform": "twitter",
+    "caption": "New product launch! ??",
+    "image_url": "https://example.com/tw1.jpg",
+    "likes": 890,
+    "comments": 56,
+    "shares": 142,
+    "posted_at": "2025-02-07T18:00:00Z",
+    "profile_url": "https://twitter.com/yourbusiness",
+    "engagement": 12.4
+  }
+]
+
+```
+
+**fetching example from gpt**
+```jsx
+import { useEffect, useState } from "react";
+
+const Dashboard = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/posts") // Fetch data from Go backend
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error fetching posts:", error));
+  }, []);
+
+  return (
+    <div>
+      <h1>Social Media Dashboard</h1>
+      <div className="posts-container">
+        {posts.map((post) => (
+          <div key={post.id} className="post-card">
+            <img src={post.image_url} alt="Post" />
+            <p><strong>{post.platform.toUpperCase()}</strong></p>
+            <p>{post.caption}</p>
+            <p>❤️ {post.likes} Likes | 💬 {post.comments} Comments</p>
+            <a href={post.profile_url} target="_blank" rel="noopener noreferrer">
+              View Profile
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;
+```
