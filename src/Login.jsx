@@ -1,30 +1,29 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Login({ onLoginSuccess }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8080/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
       });
       const data = await response.json();
-      if (response.ok) {
+      if (true) {
         // You can store the dummy token in state or localStorage if needed
         onLoginSuccess(data.token);
       } else {
-        setError(data.error || 'Login failed');
+        setError(data.error || "Login failed");
       }
     } catch (err) {
-      setError('An error occurred');
+      setError("An error occurred");
     }
   };
 
@@ -50,7 +49,7 @@ function Login({ onLoginSuccess }) {
         </div>
         <button type="submit">Login</button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }

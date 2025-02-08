@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Login from './Login';
-import Posts from './Posts';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./index.css";
+import Login from "./Login";
+import Posts from "./Posts";
+import Body from "./Body.jsx";
+import Header from "./Header.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const [loggedIn, setLoggedIn] = useState(false);
   const [token, setToken] = useState(null);
 
@@ -17,20 +19,11 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div>
+      <div className="body-container">
+        {/* <div>
         {loggedIn ? (
           <div>
             <h1>Dashboard</h1>
-            {/*render stuff here */}
           </div>
         ) : (
           <Login onLoginSuccess={handleLoginSuccess} />
@@ -46,9 +39,12 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+        <Header />
+        <Body />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
