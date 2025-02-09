@@ -9,6 +9,7 @@ import { Dialog } from "primereact/dialog";
 import { FileUpload } from "primereact/fileupload";
 import { Toast } from "primereact/toast";
 
+
 function Dashboard() {
   const [instaVisible, setInstaVisible] = useState(false);
   const [twitterVisible, setTwitterVisible] = useState(false);
@@ -20,6 +21,7 @@ function Dashboard() {
       detail: "File Uploaded",
     });
   };
+
 
   const travelDestinations = [
     "TRENDING TAGS:",
@@ -34,6 +36,7 @@ function Dashboard() {
     "#shopping",
     "#sales",
   ];
+
 
   return (
     <>
@@ -53,7 +56,7 @@ function Dashboard() {
               type="button"
               onClick={() => setInstaVisible(true)}
             >
-              Create Instagram Post ⊕
+              Create Instagram Post ?
             </Button>
             <Dialog
               header="Create an Instagram Post"
@@ -61,19 +64,37 @@ function Dashboard() {
               draggable={false}
               className="createPost"
               modal={true}
-              style={{ width: "50vw" }}
+              style={{ width: "30vw", height: "30vw" }}
               onHide={() => setInstaVisible(false)}
             >
               <form>
-                Enter a caption: <input></input>
+                Enter a caption:
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {" "}
+                  <textarea className="input-box"></textarea>
+                </div>
+                Upload media:
                 <div className="card flex justify-content-center">
-            <Toast ref={toast}></Toast>
-            <FileUpload mode="basic" name="demo[]" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse Files" />
-        </div>  
-        <Button type="Submit">Submit</Button>
+                  <Toast ref={toast}></Toast>
+                  <FileUpload
+                    mode="basic"
+                    name="demo[]"
+                    url="/api/upload"
+                    accept="image/*"
+                    maxFileSize={1000000}
+                    onUpload={onUpload}
+                    auto
+                    chooseLabel="Browse Files"
+                    className="browse-files"
+                  />
+                </div>
+                <Button className="submit-button" type="Submit">
+                  Submit
+                </Button>
               </form>
             </Dialog>
           </div>
+
 
           {/* Twitter Post Section */}
           <div className="post-container">
@@ -85,7 +106,7 @@ function Dashboard() {
               type="button"
               onClick={() => setTwitterVisible(true)}
             >
-              Create Twitter Post ⊕
+              Create Twitter Post ?
             </Button>
             <Dialog
               header="Create a Twitter Post"
@@ -93,11 +114,16 @@ function Dashboard() {
               draggable={false}
               className="createPost"
               modal={true}
-              style={{ width: "50vw" }}
+              style={{ width: "30vw", height: "30vw" }}
               onHide={() => setTwitterVisible(false)}
             >
               <form>
-                <p>Twitter post form goes here</p>
+                Enter a caption:
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {" "}
+                  <textarea className="input-box"></textarea>
+                </div>
+                Upload media:
                 <div className="card flex justify-content-center">
                   <Toast ref={toast}></Toast>
                   <FileUpload
@@ -108,17 +134,23 @@ function Dashboard() {
                     maxFileSize={1000000}
                     onUpload={onUpload}
                     auto
-                    chooseLabel="Browse"
+                    chooseLabel="Browse Files"
+                    className="browse-files"
                   />
                 </div>
+                <Button className="submit-button" type="Submit">
+                  Submit
+                </Button>
               </form>
             </Dialog>
           </div>
+
 
           <div className="stats">
             <Stats />
           </div>
         </div>
+
 
         <div className="ticker-bar">
           <div className="news-ticker">
@@ -136,4 +168,8 @@ function Dashboard() {
   );
 }
 
+
 export default Dashboard;
+
+
+
