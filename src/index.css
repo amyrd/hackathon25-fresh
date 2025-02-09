@@ -1,11 +1,7 @@
 :root {
   font-family: "Segoe UI", sans-serif;
   color: black;
-  background: linear-gradient(
-    to bottom,
-    rgba(85, 236, 247, 255),
-    rgb(0, 0, 167)
-  );
+  background: linear-gradient(to bottom, rgb(87, 170, 255), rgb(5, 76, 134));
   min-height: 100vh;
 }
 
@@ -120,7 +116,7 @@
   border-radius: 15px;
   border: solid black 1px;
   justify-content: center;
-  background: linear-gradient(to right, red, yellow);
+  background: linear-gradient(to right, rgb(14, 27, 71), rgb(47, 32, 89));
 }
 
 .input-box {
@@ -173,7 +169,7 @@
   border: black 1px solid;
   border-radius: 15px;
   min-height: 100px;
-  background: linear-gradient(to right, orange, red);
+  background: linear-gradient(to right, rgb(47, 32, 89), rgb(14, 27, 71));
   color: white;
   overflow: hidden;
   position: relative;
@@ -185,7 +181,7 @@
 .ticker-content {
   display: flex;
   white-space: nowrap;
-  animation: tickerMove 20s linear infinite;
+  animation: tickerMove 25s linear infinite;
 }
 
 .ticker-item {
@@ -196,9 +192,9 @@
 
 @keyframes tickerMove {
   from {
-    transform: translateX(100%);
+    transform: translateX(110%);
   }
   to {
-    transform: translateX(-175%);
+    transform: translateX(-210%);
   }
 }

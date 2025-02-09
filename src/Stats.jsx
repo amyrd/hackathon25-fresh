@@ -47,6 +47,39 @@ function Stats() {
       </div>
       <div id="twitter-analytics"></div>
       <h2 className="section-header">Twitter Analytics</h2>
+      <div id="instagram-analytics" className="section-header">
+        {analytics.length > 0 ? (
+          analytics.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                border: "1px solid #ccc",
+                margin: "10px",
+                padding: "10px",
+              }}
+            >
+              <p>
+                <strong>Date:</strong>{" "}
+                {new Date(item.date).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>Impressions:</strong> 12
+              </p>
+              <p>
+                <strong>Engagement:</strong> 9.1
+              </p>
+              <p>
+                <strong>Followers:</strong> 120
+              </p>
+              <p>
+                <strong>Profile Views:</strong> 124
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>No analytics data available.</p>
+        )}
+      </div>
     </>
   );
 }
